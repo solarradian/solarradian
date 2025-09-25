@@ -1,5 +1,4 @@
 
-
 import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
@@ -16,7 +15,7 @@ const uploadImageClodinary = async (image) => {
 
         return await new Promise((resolve, reject) => {
             const uploadStream = cloudinary.uploader.upload_stream(
-                { folder: "buyit" },
+                { folder: "solararadian" },
                 (error, uploadResult) => {
                     if (error) {
                         return reject(new Error("Cloudinary upload failed: " + error.message));

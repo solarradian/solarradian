@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Axios from '../utils/Axios'
 import SummaryApi from '../common/SummaryApi'
 import AxiosToastError from '../utils/AxiosToastError'
+import { updatedAvatar } from '../store/userSlice'
 import { IoClose } from "react-icons/io5";
-import { updateProfilePic } from '../store/userSlice'
 
 const UserProfileAvatarEdit = ({close}) => {
     const user = useSelector(state => state.user)
@@ -34,7 +34,7 @@ const UserProfileAvatarEdit = ({close}) => {
             })
             const { data : responseData}  = response
 
-            dispatch(updateProfilePic(responseData.data.avatar))
+            dispatch(updatedAvatar(responseData.data.avatar))
 
         } catch (error) {
             AxiosToastError(error)

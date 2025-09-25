@@ -256,40 +256,44 @@ export const logoutController = async (req, res) => {
 
 // uplode user avtar
 
-export const uploadProfilepic = async (req, res) => {
+export const uploadAvatar = async (req, res) => {
 
-
+  
     try {
 
-        const userId = req.userId //auth middleware
+        const userid = req.userId //auth middleware
+        console.log("User ID from middleware:", req.userId);
 
         const image = req.file // multer middleware
-
+        
         const upload = await uploadImageClodinary(image)
+        
+      const updatedUser = await UserModel.findByIdAndUpdate(
+  req.userId,
+  { avatar: upload.url },
+  { new: true }
+);
 
-        const updateUser = await UserModel.findByIdAndUpdate(userId, {
-            avatar: upload.url
-        })
-
-
+        
         return res.json({
             message: "upload profile",
             data: {
-                _id: userId,
+                _id : userid,
                 avatar: upload.url
             }
         });
 
     } catch (error) {
-
+        
         return res.status(500).json({
             message: error.message || error,
             error: true,
             success: false
         });
     }
-
+     
 }
+
 
 // update user details
 export const updateUserDetails = async (req, res) => {

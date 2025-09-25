@@ -10,25 +10,28 @@ import userRouter from './routes/user.routes.js'
 import projectRoutes from "./routes/project.routes.js";
 import addressRouter from './routes/address.routes.js';
 import salaryRouter from './routes/salary.routes.js'
+import uploadRouter from './routes/upload.routes.js'
 
 
 
 
 const app = express()
 
+app.use(morgan('combined')); // Add logging format
+app.use(helmet({
+    crossOriginResourcePolicy: false
+}))
+
 app.use(cors({
-    credentials:true,
-    origin:process.env.FRONTEND_URL
+    credentials: true,
+    origin: process.env.FRONTEND_URL
 }))
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(morgan())
-app.use(helmet({
-    crossOriginResourcePolicy:false
-}))
 
-const PORT = 8080 || process.env.PORT
+
+const PORT =  process.env.PORT || 8080 
 
 app.get( "/" , (req , res) =>{
     res.json({
@@ -44,6 +47,7 @@ app.use('/api/user' ,userRouter)
 app.use("/api/projects", projectRoutes);
 app.use("/api/address", addressRouter);
 app.use("/api/salary", salaryRouter);
+app.use('/api/file',uploadRouter)
 
 
 connectDB().then( () => {

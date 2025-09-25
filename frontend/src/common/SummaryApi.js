@@ -19,6 +19,10 @@ const SummaryApi = {
         url: '/api/user/logout',
         method: "get"
     },
+    uploadAvatar : {
+        url : '/api/user/upload-avatar',
+        method : "put"
+    },
     userDetails: {
         url: '/api/user/user-details',
         method: "get"
@@ -70,6 +74,10 @@ const SummaryApi = {
     getallprojects: {
         url: "/api/projects/getallprojects",
         method: "get"
+    },
+    uploadImage : {
+        url :'/api/file/upload',
+        method : "post",
     },
 }
 

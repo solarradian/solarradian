@@ -367,9 +367,9 @@ const Header = () => {
                 <div className='relative'>
                   <div onClick={() => setOpenUserMenu(preve => !preve)} className='flex select-none items-center gap-1 cursor-pointer'>
                     <div className="flex items-center gap-3 font-semibold">
-                      {user.profilepic ? (
+                      {user.avatar ? (
                         <img
-                          src={user.profilepic}
+                          src={user.avatar}
                           alt="Profile"
                           className="w-10 h-10 rounded-full border object-cover"
                         />
@@ -490,9 +490,9 @@ const Header = () => {
             {user?._id ? (
               <div className='pt-4 border-t mt-2'>
                 <div className='flex items-center gap-3'>
-                  {user.profilepic ? (
+                  {user.avatar ? (
                     <img
-                      src={user.profilepic}
+                      src={user.avatar}
                       alt="Profile"
                       className="w-10 h-10 rounded-full border object-cover"
                     />

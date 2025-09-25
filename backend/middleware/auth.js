@@ -58,6 +58,7 @@ const auth = async (req, res, next) => {
     }
 
     req.user = user; // ✅ attach logged-in user
+    req.userId = user._id;
     next();
   } catch (error) {
     return res.status(401).json({

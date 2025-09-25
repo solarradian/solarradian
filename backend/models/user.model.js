@@ -22,9 +22,9 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Provide password"],
     },
-    profilepic: {
-      type: String,
-      default: "",
+    avatar: {
+        type: String,
+        default: ""
     },
     mobile: {
       type: String,

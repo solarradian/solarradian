@@ -6,7 +6,7 @@ const initialState = {
   uniqueId: "",
   name: "",
   email: "",
-  profilepic: "",
+  avatar: "",
   mobile: "",
   role: "Customer",
   projectPreferences: {
@@ -32,7 +32,7 @@ const userSlice = createSlice({
       state.uniqueId = action.payload?.uniqueId ;
       state.name = action.payload?.name ;
       state.email = action.payload?.email;
-      state.profilepic = action.payload?.profilepic;
+      state.avatar = action.payload?.avatar;
       state.mobile = action.payload?.mobile;
       state.role = action.payload?.role || "Customer";
       state.projectPreferences = action.payload?.projectPreferences || {
@@ -48,8 +48,8 @@ const userSlice = createSlice({
       state.forgot_password_expiry = action.payload?.forgot_password_expiry;
     },
 
-    updateProfilePic: (state, action) => {
-      state.profilepic = action.payload;
+    updatedAvatar : (state, action) => {
+      state.avatar = action.payload;
     },
 
       logout: () => {
@@ -58,5 +58,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { setUserDetails, updateProfilePic, logout } = userSlice.actions;
+export const { setUserDetails, updateProfilePic , logout , updatedAvatar} = userSlice.actions;
 export default userSlice.reducer;
