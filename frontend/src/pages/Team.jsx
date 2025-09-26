@@ -31,7 +31,7 @@ const Team = () => {
     
 
       {/* Page Header */}
-      <div className="bg-blue-600 text-white py-16 text-center">
+    <div className="w-full bg-gradient-to-r from-imp-text to-orange-300 py-10 mb-10">
         <h1 className="text-4xl md:text-5xl font-bold">Our Team</h1>
       </div>
 
