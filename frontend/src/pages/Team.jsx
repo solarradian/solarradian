@@ -31,10 +31,19 @@ const Team = () => {
     
 
       {/* Page Header */}
-    <div className="w-full bg-gradient-to-r from-imp-text to-orange-300 py-10 mb-10">
-        <h1 className="text-4xl md:text-5xl font-bold">Our Team</h1>
+       <div className="w-full bg-gradient-to-r from-imp-text to-orange-300 py-10 mb-10">
+        <div className="container xl:max-w-7xl mx-auto px-4 text-center">
+          <motion.h1
+            className="text-4xl sm:text-5xl font-bold text-white mb-4"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            Our Team
+          </motion.h1>
+       
+        </div>
       </div>
-
       {/* Team Section */}
       <div className="max-w-7xl mx-auto px-4 py-16 text-center">
         <h6 className="text-blue-600 uppercase font-semibold">Team Member</h6>
