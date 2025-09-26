@@ -4,6 +4,7 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
 // Import team member images
 import swati from "../assets/swatimam.jpg";
