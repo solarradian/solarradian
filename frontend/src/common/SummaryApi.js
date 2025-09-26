@@ -32,7 +32,7 @@ const SummaryApi = {
         method: "get"
     },
     refreshToken: {
-        url: 'api/user/refresh-token',
+        url: '/api/user/refresh-token',
         method: 'post'
     },
     forgot_password: {
