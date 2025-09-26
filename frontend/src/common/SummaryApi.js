@@ -1,4 +1,4 @@
-export const baseURL = "http://72.60.101.147:4000"
+export const baseURL = "http://localhost:4000"
 
 const SummaryApi = {
 
