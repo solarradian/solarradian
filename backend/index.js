@@ -5,7 +5,7 @@ dotenv.config()
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
 import helmet from 'helmet'
-import connectDB from './db/connectDB.js'
+import connectDB from './mongo/connectDB.js'
 import userRouter from './routes/user.routes.js'
 import projectRoutes from "./routes/project.routes.js";
 import addressRouter from './routes/address.routes.js';
