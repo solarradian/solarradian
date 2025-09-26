@@ -1,4 +1,4 @@
-export const baseURL = "https://www.solarradian.com"
+export const baseURL = "https://localhost:4000"
 
 const SummaryApi = {
 
