@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import UserMenu from '../components/userMenu'
+import UserMenu from '../components/UserMenu'
 
 const Dashboard = () => {
   const user = useSelector(state => state.user)
