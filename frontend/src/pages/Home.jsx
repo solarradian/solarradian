@@ -2,6 +2,7 @@ import React from 'react';
 import HeroCarousel from '../components/HeroCarousel';
 import About from './About';
 import Team from './Team';
+import Service from '../components/Service';
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
     <>
     <HeroCarousel/>
      <About/>
+     <Service/>
      <Team />
 
     </>
