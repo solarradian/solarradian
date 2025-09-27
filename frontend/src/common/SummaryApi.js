@@ -1,4 +1,4 @@
-export const baseURL = "https://solarradian.com"
+export const baseURL = "https://www.solarradian.com"
 
 const SummaryApi = {
 
