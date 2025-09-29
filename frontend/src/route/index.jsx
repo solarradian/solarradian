@@ -19,7 +19,8 @@ import Dashboard from './../layout/Dashboard';
 import Profile from './../pages/Profile';
 import Address from "../pages/Address";
 import AdminPermision from './../layout/AdminPermision';
-import EmployeePermision from './../layout/EmployeePermision';
+// import EmployeePermision from './../layout/EmployeePermision';
+ import Bothpermision from './../layout/Bothpermision';
 import CreateProject from "../pages/CreateProject";
 import GetProjects from "../pages/GetProjects";
 import QuotationGenerator from "../pages/QuotationGenerator";
@@ -143,7 +144,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "quotationgenerator",
-                        element:  <EmployeePermision> <QuotationGenerator/></EmployeePermision>
+                        element:  <Bothpermision> <QuotationGenerator/> </Bothpermision>
                     }
 
                 ]

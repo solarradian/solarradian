@@ -9,8 +9,11 @@ import {
   FaHome,
   FaInfoCircle,
   FaServicestack,
-  FaEnvelope
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhoneAlt
 } from 'react-icons/fa';
+
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -23,10 +26,31 @@ const Footer = () => {
 
         {/* Logo and About */}
         <div>
-           <Link to="/"> <img src={logo} className='h-14' alt="" /></Link>
-          <p className="text-sm text-gray-300">
-            Leading solar solutions for a brighter and cleaner future. We bring sustainable energy to your doorstep.
-          </p>
+          <Link to="/"> <img src={logo} className='h-14' alt="" /></Link>
+<div className="w-full">
+      <h5 className="text-white text-lg font-semibold mb-4">Address</h5>
+
+      <p className="mb-2 text-gray-300 flex items-start">
+        <FaMapMarkerAlt className="text-primary mr-3 mt-1" />
+        Office Address - S.N 2, 2nd Floor, Ashirwad Complex, Sector 53, Noida
+      </p>
+
+      <p className="mb-2 text-gray-300 flex items-start">
+        <FaMapMarkerAlt className="text-primary mr-3 mt-1" />
+        Registered Address - 2nd Floor, H-1259, DSIIDC Narela Industrial Area, Delhi
+      </p>
+
+      <p className="mb-2 text-gray-300 flex items-center">
+        <FaPhoneAlt className="text-primary mr-3" />
+        +91 9220337642
+      </p>
+
+      <p className="mb-2 text-gray-300 flex items-center">
+        <FaEnvelope className="text-primary mr-3" />
+        contact@solarradian.com
+      </p>
+    </div>
+
         </div>
 
         {/* Quick Links */}
@@ -82,10 +106,10 @@ const Footer = () => {
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
               <FaTwitter />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <a href="https://www.instagram.com/solarradian/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
               <FaInstagram />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <a href="https://www.linkedin.com/company/solar-radian-delhi/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="hover:text-white">
               <FaLinkedin />
             </a>
           </div>

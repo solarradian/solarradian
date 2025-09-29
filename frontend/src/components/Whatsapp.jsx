@@ -22,7 +22,7 @@ const Whatsapp = () => {
                         Hi there! How can we help you today?
                     </p>
                     <a
-                        href="https://wa.me/919528545024?text=Hi%2C%20I%20need%20some%20help"
+                        href="https://wa.me/919220337642?text=Hi%2C%20I%20need%20some%20help"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg transition"

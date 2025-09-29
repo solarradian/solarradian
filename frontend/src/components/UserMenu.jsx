@@ -81,7 +81,12 @@ const UserMenu = ({ close }) => {
         }
 
          {
-          isEmployee(user.role) && (
+          isAdmin(user.role)  && (
+           <Link onClick={handleClose} to={"/dashboard/quotationgenerator"} className='px-2 hover:bg-orange-200 py-1'>Quotation Generator</Link>
+          )
+        }
+          {
+          isEmployee(user.role)  && (
            <Link onClick={handleClose} to={"/dashboard/quotationgenerator"} className='px-2 hover:bg-orange-200 py-1'>Quotation Generator</Link>
           )
         }

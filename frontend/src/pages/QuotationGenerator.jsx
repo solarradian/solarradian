@@ -63,7 +63,11 @@ const QuotationGenerator = () => {
       setFormData((prev) => ({ ...prev, battery: "No", hour: "" }));
     }
   }, [formData.systemType]);
-
+  useEffect(() => {
+    if (formData.centralsubsidy === "Yes") {
+      setFormData((prev) => ({ ...prev, maintenance : "5 Year" }));
+    }
+  }, [formData.systemType]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
