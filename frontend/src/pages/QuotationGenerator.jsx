@@ -65,9 +65,9 @@ const QuotationGenerator = () => {
   }, [formData.systemType]);
   useEffect(() => {
     if (formData.centralsubsidy === "Yes") {
-      setFormData((prev) => ({ ...prev, maintenance : "5 Year" }));
+      setFormData((prev) => ({ ...prev, maintenance : "5 Years" }));
     }
-  }, [formData.systemType]);
+  }, [formData.centralsubsidy]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -957,7 +957,8 @@ h) Sand, Cement, and Stone chips for any civil work in Structure`;
                 value={formData.maintenance}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500"
+                disabled={formData.centralsubsidy === "Yes"}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 disabled:opacity-50"
               >
                 <option value="">Select Period</option>
                 <option value="1 Year">1 Year</option>
