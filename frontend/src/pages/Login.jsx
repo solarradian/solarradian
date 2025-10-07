@@ -67,7 +67,7 @@ const handleSubmit = async(e) =>{
     }
 
 
-    console.log( "response", response )
+    
     
   } catch (error) {
     AxiosToastError(error)
