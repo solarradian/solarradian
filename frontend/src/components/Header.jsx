@@ -108,7 +108,7 @@ const Header = () => {
               <button className="flex items-center hover:text-yellow-500">
                 <FaSun className="mr-1" /> Delhi Solar Policy
               </button>
-              <div className="absolute hidden group-hover:block bg-white shadow rounded mt-2 z-10">
+              <div className="absolute hidden group-hover:block bg-white shadow rounded  z-10">
                 <Link to="/delhi-solar-energy-policy" className="block px-4 py-2 hover:bg-gray-100">Delhi Solar Energy Policy</Link>
                 <Link to="/delhi-solar-guidlines" className="block px-4 py-2 hover:bg-gray-100">Regulation & Guidelines</Link>
               </div>
@@ -119,7 +119,7 @@ const Header = () => {
 
             <div className="relative group">
               <button className="hover:text-yellow-500">Pages</button>
-              <div className="absolute hidden group-hover:block bg-white shadow rounded mt-2 z-10">
+              <div className="absolute hidden group-hover:block bg-white shadow rounded  z-10">
                 <Link to="/faq" className="block px-4 py-2 hover:bg-gray-100">FAQ</Link>
                 <Link to="/referandearn" className="block px-4 py-2 hover:bg-gray-100">Refer & Earn</Link>
                 <Link to="/solar-calculator" className="block px-4 py-2 hover:bg-gray-100">Solar Calculator</Link>
