@@ -25,7 +25,7 @@ const UserMenu = ({ close }) => {
       const response = await Axios({
         ...SummaryApi.logout
       })
-      console.log("logout", response)
+      // console.log("logout", response)
       if (response.data.success) {
         if (close) {
           close()
@@ -36,7 +36,7 @@ const UserMenu = ({ close }) => {
         navigate("/")
       }
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       AxiosToastError(error)
     }
   }
