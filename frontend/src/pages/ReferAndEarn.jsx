@@ -32,8 +32,9 @@ const ReferAndEarn = () => {
   return (
     <div>
       {/* Page Header */}
-      <motion.div
-        className="w-full bg-blue-600 py-16 mb-10"
+      <div className="w-full bg-gradient-to-r from-imp-text to-orange-300 py-10 mb-10">
+        <motion.div
+        className="w-full "
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -45,18 +46,10 @@ const ReferAndEarn = () => {
         </div>
       </motion.div>
 
-      {/* Info Header */}
-      <section className="bg-gray-50 py-10 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-blue-600 mb-3">
-            Refer and Earn Program
-          </h1>
-          <p className="text-lg text-gray-700">
-            Help others go solar and get rewarded!
-          </p>
-        </div>
-      </section>
+      </div>
 
+
+      
       {/* Referral Info + Form */}
       <section className="max-w-6xl mx-auto my-12 px-4 grid grid-cols-1 md:grid-cols-12 gap-8">
         {/* Left Column */}
@@ -113,9 +106,6 @@ const ReferAndEarn = () => {
           transition={{ duration: 0.7 }}
         >
           <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-            <div className="bg-blue-600 text-white px-4 py-3">
-              <h5 className="text-lg font-semibold mb-0">Referral Form</h5>
-            </div>
             <div className="p-6">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <h6 className="text-gray-800 font-medium">Your Details</h6>
@@ -174,7 +164,7 @@ const ReferAndEarn = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-lg shadow-md transition"
+                  className="w-full bg-imp-text text-white font-semibold px-4 py-2 rounded-lg shadow-md transition"
                 >
                   Submit Referral
                 </button>
