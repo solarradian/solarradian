@@ -44,55 +44,74 @@ const FreeQuote = () => {
               affordable rooftop solutions with lifetime support.
             </p>
 
-            <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="border rounded-md p-3 w-full"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Your Mobile"
-                className="border rounded-md p-3 w-full"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="border rounded-md p-3 w-full"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Your Address"
-                className="border rounded-md p-3 w-full"
-                required
-              />
-              <select className="border rounded-md p-3 w-full" required>
-                <option>Select Project Type</option>
-                <option>On Grid</option>
-                <option>Off Grid</option>
-                <option>Hybrid</option>
-              </select>
-              <input
-                type="number"
-                placeholder="Capacity (kW)"
-                className="border rounded-md p-3 w-full"
-                required
-              />
-              <textarea
-                placeholder="Additional Remarks"
-                rows="3"
-                className="border rounded-md p-3 w-full col-span-2"
-              ></textarea>
-              <button
-                type="submit"
-                className="col-span-2 bg-imp-text text-white py-3 rounded-md hover:bg-orange-300 duration-200"
-              >
-                Submit
-              </button>
-            </form>
+           <form className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white text-gray-800 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100">
+  {/* Name */}
+  <input
+    type="text"
+    placeholder="Your Name"
+    className="border border-gray-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-200 rounded-md p-3 w-full outline-none"
+    required
+  />
+
+  {/* Mobile */}
+  <input
+    type="text"
+    placeholder="Your Mobile"
+    className="border border-gray-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-200 rounded-md p-3 w-full outline-none"
+    required
+  />
+
+  {/* Email */}
+  <input
+    type="email"
+    placeholder="Your Email"
+    className="border border-gray-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-200 rounded-md p-3 w-full outline-none"
+    required
+  />
+
+  {/* Address */}
+  <input
+    type="text"
+    placeholder="Your Address"
+    className="border border-gray-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-200 rounded-md p-3 w-full outline-none"
+    required
+  />
+
+  {/* Project Type */}
+  <select
+    className="border border-gray-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-200 rounded-md p-3 w-full outline-none"
+    required
+  >
+    <option value="">Select Project Type</option>
+    <option>On Grid</option>
+    <option>Off Grid</option>
+    <option>Hybrid</option>
+  </select>
+
+  {/* Capacity */}
+  <input
+    type="number"
+    placeholder="Capacity (kW)"
+    className="border border-gray-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-200 rounded-md p-3 w-full outline-none"
+    required
+  />
+
+  {/* Remarks */}
+  <textarea
+    placeholder="Additional Remarks"
+    rows="3"
+    className="border border-gray-300 focus:border-orange-400 focus:ring-2 focus:ring-orange-200 rounded-md p-3 w-full col-span-1 sm:col-span-2 outline-none"
+  ></textarea>
+
+  {/* Submit Button */}
+  <button
+    type="submit"
+    className="col-span-1 sm:col-span-2  bg-imp-text  text-white py-3 rounded-md font-semibold hover:bg-orange-300  duration-200 shadow-md"
+  >
+    Submit
+  </button>
+</form>
+
           </div>
         </div>
       </section>
