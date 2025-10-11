@@ -29,6 +29,9 @@ import SolarCalculator from "../pages/SolarCalculator";
 import Team from "../pages/Team";
 import FreeQuote from "../pages/FreeQuote";
 import BlogPage from "../pages/BlogPage/BlogPage";
+import SolarinDelhi from "../statepages/SolarinDelhi";
+import SolarinNoida from "../statepages/SolarinNoida";
+import WhySolar from "../pages/WhySolar";
 
 
 
@@ -59,6 +62,14 @@ const router = createBrowserRouter([
                 path: "rooftopsolar",
                 element: <RooftopSolar />
             },
+             {
+                path: "solar-in-delhi",
+                element: <SolarinDelhi/>
+            },
+             {
+                path: "solar-in-noida",
+                element: <SolarinNoida/>
+            },
             {
                 path: "partner",
                 element: <Partner />
@@ -82,6 +93,10 @@ const router = createBrowserRouter([
             {
                 path: "referandearn",
                 element: <ReferAndEarn />
+            },
+             {
+                path: "whysolar",
+                element: <WhySolar/>
             },
             {
                 path: "pmsurayghar",

@@ -19,11 +19,11 @@ const Team = () => {
 
   const teamMembers = [
     { id: 1, img: swati, name: "Swati", role: "CEO and Founder" },
-    { id: 2, img: team01, name: "Mohd Salman", role: "Business Head" },
+    { id: 2, img: team01, name: "Mohd Salman", role: "Project Head" },
     { id: 3, img: den2, name: "Anmol Kumar", role: "Admin Executive" },
     { id: 4, img: mohasim, name: "Mo Hasim", role: "Software Engineer" },
-    { id: 5, img: rakesh, name: "Rakesh Kumar", role: "Sales Head" },
-    { id: 6, img: jubair, name: "Mohd Jubair", role: "Senior Manager" },
+    { id: 5, img: rakesh, name: "Rakesh Kumar", role: "Business Head" },
+    { id: 6, img: jubair, name: "Mohd Jubair", role: "Sales Exicutive" },
     { id: 7, img: shubham, name: "Shubham Kumar", role: "Sales Executive" },
   ];
 

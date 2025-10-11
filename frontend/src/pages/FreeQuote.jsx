@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import quote from '../assets/quote.jpg'
+import { motion } from "framer-motion";
 const FreeQuote = () => {
  
 
@@ -8,9 +9,17 @@ const FreeQuote = () => {
      
   
       {/* Page Header */}
-      <div className="relative bg-blue-600 text-white py-20">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-3">Free Quote</h1>
+      <div className="w-full bg-gradient-to-r from-imp-text to-orange-300 py-10 mb-10">
+        <div className="container xl:max-w-7xl mx-auto px-4 text-center">
+          <motion.h1
+            className="text-4xl sm:text-5xl font-bold text-white mb-4"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            Free Quote
+          </motion.h1>
+       
         </div>
       </div>
 
@@ -79,7 +88,7 @@ const FreeQuote = () => {
               ></textarea>
               <button
                 type="submit"
-                className="col-span-2 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700"
+                className="col-span-2 bg-imp-text text-white py-3 rounded-md hover:bg-orange-300 duration-200"
               >
                 Submit
               </button>

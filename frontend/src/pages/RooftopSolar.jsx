@@ -5,8 +5,8 @@ const RooftopSolar = () => {
   return (
     <>
       {/* Page Header Start */}
-       <div className="w-full bg-gradient-to-r from-imp-text to-orange-300 py-10 mb-10">
-        <div className="container max-w-7xl mx-auto px-4 text-center">
+      <div className="w-full bg-gradient-to-r from-imp-text to-orange-300 py-10 mb-10">
+        <div className="container xl:max-w-7xl mx-auto px-4 text-center">
           <motion.h1
             className="text-4xl sm:text-5xl font-bold text-white mb-4"
             initial={{ y: -20, opacity: 0 }}
@@ -15,6 +15,7 @@ const RooftopSolar = () => {
           >
             Rooftop Solar
           </motion.h1>
+       
         </div>
       </div>
       {/* Page Header End */}

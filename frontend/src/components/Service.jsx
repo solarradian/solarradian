@@ -38,14 +38,19 @@ const  Service = () => {
   return (
     <section className="py-16 bg-gray-50">
 
-      <div className="text-center  bg-gradient-to-r from-imp-text to-orange-300 w-full p-4">
-          <h1 className="text-white text-4xl md:text-5xl font-black underline underline-offset-4 decoration-2 mb-4">
-            Our Services
-          </h1>
-          <h5 className="text-lg text-gray-600">
-            We Are Pioneers In The World Of Renewable Energy
-          </h5>
-        </div>
+         <div className="w-full bg-gradient-to-r from-imp-text to-orange-300 py-10 mb-10">
+            <div className="container xl:max-w-7xl mx-auto px-4 text-center">
+              <motion.h1
+                className="text-4xl sm:text-5xl font-bold text-white mb-4"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                Our Services
+              </motion.h1>
+           
+            </div>
+          </div>
 
       <div className="max-w-6xl mx-auto px-6 py-5">
         {/* Section Heading */}
@@ -80,7 +85,7 @@ const  Service = () => {
 
                 {/* Button */}
                 <Link to={service.link}
-                  className="inline-flex items-center px-5 py-2 border border-primary text-primary rounded-full hover:bg-imp-text hover:text-white transition"
+                  className="inline-flex text-white items-center px-5 py-2  rounded-full hover:bg-orange-300 bg-imp-text transition"
                 >
                   Read More
                   <FaArrowRight className="ml-2" />

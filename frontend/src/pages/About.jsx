@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Team from './Team';
 
 const About = () => {
   return (
@@ -20,7 +21,7 @@ const About = () => {
       </div>
 
       {/* About Content */}
-      <div className="container xl:max-w-7xl mx-auto px-4 space-y-6">
+      <div className="container xl:max-w-7xl mx-auto px-4 space-y-6 mb-3">
         <p>
           <strong>Solar Radian</strong> is a premier renewable energy company specializing in solar rooftop solutions for residential properties, housing societies, and commercial and industrial clients. Backed by a team of seasoned professionals with extensive experience in the renewable energy sector, we are committed to advancing the solar energy industry.
         </p>
@@ -48,27 +49,28 @@ const About = () => {
         {/* Mission, Vision, Values */}
         <div className="mt-10 space-y-6">
           <div>
-            <h2 className="text-2xl font-semibold mb-2">Our Mission</h2>
-            <p>
+            <h2 className="text-2xl font-bold mb-2 text-center">Our Mission</h2>
+            <p className='text-center'>
               Our mission at Solar Radian is to deliver exceptional products and services to our clients while advancing the solar energy industry. We strive to make clean and reliable energy available to all.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mb-2">Our Vision</h2>
-            <p>
+            <h2 className="text-2xl font-bold mb-2 text-center">Our Vision</h2>
+          <p className='text-center'>
               We aim to establish ourselves as a distinguished leader in the solar energy industry. Our vision is to create a lasting legacy of growth and innovation for the future.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mb-2">Our Values</h2>
-            <p>
+            <h2 className="text-2xl font-bold mb-2 text-center">Our Values</h2>
+          <p className='text-center'> 
               Our core values of integrity, accountability, teamwork, innovation, and partnership drive our mission to expand the solar industry globally.
             </p>
           </div>
         </div>
       </div>
+      <Team/>
     </>
   );
 };

@@ -297,20 +297,17 @@ const SolarCalculator = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-blue-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-green-600 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="bg-gradient-to-r from-imp-text to-orange-300 text-white py-20 relative overflow-hidden">
+        <div className="absolute z-10 "></div>
+        <div className="">
           <div className="flex items-center justify-center mb-6">
             <Sun className="w-16 h-16 mr-4 text-yellow-300 animate-spin" style={{animationDuration: '8s'}} />
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold ">
               Solar Calculator
             </h1>
           </div>
-          <p className="text-xl md:text-2xl opacity-90 font-medium max-w-2xl mx-auto leading-relaxed">
-            Calculate your solar installation costs, subsidies, and savings with precision
-          </p>
         </div>
       </div>
 

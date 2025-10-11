@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-800 text-white py-8  mt-16">
-      <div className="container xl:max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container xl:max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
 
         {/* Logo and About */}
         <div>
@@ -96,6 +96,17 @@ const Footer = () => {
           </ul>
         </div>
 
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Solar Area</h3>
+          <div className="flex flex-col text-gray-300 text-lg">
+          <ul className='list-disc'> 
+          <li><Link to={"/solar-in-delhi"} className='underline text-sm'>Solar In Delhi</Link></li> 
+          <li><Link to={"/solar-in-noida"} className='underline text-sm'>Solar In Noida</Link></li> 
+          </ul>
+      
+          </div>
+        </div>
+
         {/* Social Media */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
@@ -118,7 +129,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400 max-w-7xl container mx-auto">
-        © {new Date().getFullYear()} Solar Radian. All rights reserved.
+       <p className='py-2'>© {new Date().getFullYear()} Solar Radian. All rights reserved.</p>  <a href="https://mohasim.vercel.app/">Made by Mo Hasim</a>
       </div>
     </footer>
   );

@@ -75,6 +75,7 @@ const Header = () => {
             </div>
           </div>
           <div className="flex items-center space-x-6">
+          <div> <button onClick={ () => navigate('/solar-calculator')} className='bg-imp-text hover:bg-orange-400 duration-300 px-3 py-2 rounded-md'>Saving Calculator</button></div>
             <div className="flex items-center space-x-1">
               <FaPhoneAlt className="text-yellow-400" />
               <span>+91 9220337642</span>
@@ -124,7 +125,6 @@ const Header = () => {
                 <Link to="/referandearn" className="block px-4 py-2 hover:bg-gray-100">Refer & Earn</Link>
                 <Link to="/solar-calculator" className="block px-4 py-2 hover:bg-gray-100">Solar Calculator</Link>
                 <Link to="/freequote" className="block px-4 py-2 hover:bg-gray-100">Free Quote</Link>
-                <Link to="/team" className="block px-4 py-2 hover:bg-gray-100">Our Team</Link>
               </div>
             </div>
 
@@ -248,7 +248,6 @@ const Header = () => {
                   <Link to="/referandearn" onClick={handleDrawerToggle} className="block py-2">Refer & Earn</Link>
                   <Link to="/solar-calculator" onClick={handleDrawerToggle} className="block py-2">Solar Calculator</Link>
                   <Link to="/freequote" onClick={handleDrawerToggle} className="block py-2">Free Quote</Link>
-                  <Link to="/team" onClick={handleDrawerToggle} className="block py-2">Our Team</Link>
                 </div>
               )}
             </div>
@@ -284,6 +283,7 @@ const Header = () => {
                 <FaUserPlus size={20} className='mr-2' /> Signup / Login
               </button>
             )}
+             <div> <button onClick={ () => navigate('/solar-calculator')} className='text-white bg-imp-text hover:bg-orange-400 duration-300 px-3 py-2 rounded-md'>Saving Calculator</button></div>
           </nav>
         </div>
       </nav>
