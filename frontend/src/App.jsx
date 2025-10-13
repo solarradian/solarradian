@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 import GlobalProvider from './provider/GlobalProvider';
 import fetchUsersDetails from './utils/fetchUsersDetails'
 import { setUsersDetails } from './store/usersSlice'
-
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const dispatch = useDispatch()
@@ -31,6 +31,7 @@ function App() {
 
   return (
     <GlobalProvider> 
+    <ScrollToTop/>
       <Header/>
       <main className='min-h-[78vh]'>
           <Outlet/>

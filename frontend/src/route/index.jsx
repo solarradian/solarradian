@@ -32,6 +32,10 @@ import BlogPage from "../pages/BlogPage/BlogPage";
 import SolarinDelhi from "../statepages/SolarinDelhi";
 import SolarinNoida from "../statepages/SolarinNoida";
 import WhySolar from "../pages/WhySolar";
+import DelhiSolarPolicy from "../pages/DelhiSolarPolicy";
+import UpSolarPolicy from "../pages/UpSolarPolicy";
+import DelhiSolarRegulationAndGuidlines from "../pages/DelhiSolarRegulationAndGuidlines";
+import UpSolarRegulationAndGuidlines from "../pages/UpSolarRegulationAndGuidlines";
 
 
 
@@ -62,17 +66,33 @@ const router = createBrowserRouter([
                 path: "rooftopsolar",
                 element: <RooftopSolar />
             },
+            {
+                path: "partner",
+                element: <Partner />
+            },
              {
                 path: "solar-in-delhi",
                 element: <SolarinDelhi/>
             },
-             {
+            {
                 path: "solar-in-noida",
                 element: <SolarinNoida/>
             },
             {
-                path: "partner",
-                element: <Partner />
+                path: "delhi-solar-policy",
+                element: <DelhiSolarPolicy/>
+            },
+            {
+                path: "up-solar-policy",
+                element: <UpSolarPolicy/>
+            },
+            {
+                path: "delhi-solar-guidelines",
+                element: <DelhiSolarRegulationAndGuidlines/>
+            },
+            {
+                path: "up-solar-guidelines",
+                element: <UpSolarRegulationAndGuidlines/>
             },
             {
                 path: "faq",

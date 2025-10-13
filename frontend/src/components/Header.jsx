@@ -35,7 +35,7 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openUserMenu, setOpenUserMenu] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState({
-    delhiPolicy: false,
+    statePolicy: false,
     pages: false
   });
 
@@ -58,6 +58,25 @@ const Header = () => {
       [menu]: !prev[menu]
     }));
   };
+    const [mainOpen, setMainOpen] = useState(false); // main submenu open
+  const [openState, setOpenState] = useState(null); // which state submenu is open
+
+  const states = [
+    {
+      name: "Delhi",
+      links: [
+        { title: "Delhi Solar Policy", path: "/delhi-solar-policy" },
+        { title: "Regulation & Guidelines", path: "/delhi-solar-guidelines" },
+      ],
+    },
+    {
+      name: "Uttar Pradesh",
+      links: [
+        { title: "UP Solar Policy", path: "/up-solar-policy" },
+        { title: "Regulation & Guidelines", path: "/up-solar-guidelines" },
+      ],
+    },
+  ];
 
   return (
     <>
@@ -66,25 +85,25 @@ const Header = () => {
         <div className="container xl:max-w-[1400px] mx-auto flex justify-between items-center py-2 px-4">
           <div className="flex space-x-6">
             <div className="flex items-center space-x-1">
-              <FaMapMarkerAlt className="text-yellow-400" />
+              <FaMapMarkerAlt className="text-orange-400" />
               <span>S.N 2, 2nd Floor, Ashirwad Complex, Sector 53, Noida</span>
             </div>
             <div className="flex items-center space-x-1">
-              <FaClock className="text-yellow-400" />
+              <FaClock className="text-orange-400" />
               <span>Mon - Fri : 09.00 AM - 06.00 PM</span>
             </div>
           </div>
           <div className="flex items-center space-x-6">
-          <div> <button onClick={ () => navigate('/solar-calculator')} className='bg-imp-text hover:bg-orange-400 duration-300 px-3 py-2 rounded-md'>Saving Calculator</button></div>
+            <div> <button onClick={() => navigate('/solar-calculator')} className='bg-imp-text hover:bg-orange-400 duration-300 px-3 py-2 rounded-md'>Saving Calculator</button></div>
             <div className="flex items-center space-x-1">
-              <FaPhoneAlt className="text-yellow-400" />
+              <FaPhoneAlt className="text-orange-400" />
               <span>+91 9220337642</span>
             </div>
             <div className="flex space-x-3">
-              <a href="#" className="hover:text-yellow-400"><FaFacebookF /></a>
-              <a href="#" className="hover:text-yellow-400"><FaTwitter /></a>
-              <a href="#" className="hover:text-yellow-400"><FaLinkedinIn /></a>
-              <a href="#" className="hover:text-yellow-400"><FaInstagram /></a>
+              <a href="#" className="hover:text-orange-400"><FaFacebookF /></a>
+              <a href="#" className="hover:text-orange-400"><FaTwitter /></a>
+              <a href="#" className="hover:text-orange-400"><FaLinkedinIn /></a>
+              <a href="#" className="hover:text-orange-400"><FaInstagram /></a>
             </div>
           </div>
         </div>
@@ -100,26 +119,64 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-6 items-center">
-            <NavLink to="/" className="hover:text-yellow-500 flex items-center"><FaHome className="mr-1" /> Home</NavLink>
-            <NavLink to="/about" className="hover:text-yellow-500 flex items-center"><FaUsers className="mr-1" /> About</NavLink>
-            <NavLink to="/rooftopsolar" className="hover:text-yellow-500 flex items-center"><FaSolarPanel className="mr-1" /> Rooftop Solar</NavLink>
-            <NavLink to="/pmsurayghar" className="hover:text-yellow-500 flex items-center"><FaCloudSun className="mr-1" /> PM Surya Ghar</NavLink>
+            <NavLink to="/" className="hover:text-orange-400 flex items-center"><FaHome className="mr-1" /> Home</NavLink>
+            <NavLink to="/about" className="hover:text-orange-400 flex items-center"><FaUsers className="mr-1" /> About</NavLink>
+            <NavLink to="/rooftopsolar" className="hover:text-orange-400 flex items-center"><FaSolarPanel className="mr-1" /> Rooftop Solar</NavLink>
+            <NavLink to="/pmsurayghar" className="hover:text-orange-400 flex items-center"><FaCloudSun className="mr-1" /> PM Surya Ghar</NavLink>
 
-            <div className="relative group">
-              <button className="flex items-center hover:text-yellow-500">
-                <FaSun className="mr-1" /> Delhi Solar Policy
+         <div
+      className="relative"
+      onMouseEnter={() => setMainOpen(true)}
+      onMouseLeave={() => {
+        setMainOpen(false);
+        setOpenState(null);
+      }}
+    >
+      {/* Main Nav */}
+      <button className="py-2 flex items-center w-full justify-between hover:text-orange-400 transition duration-200">
+        <span className="flex items-center">
+          <FaSun className="mr-2 " /> State Solar Policy
+        </span>
+      </button>
+
+      {/* Main Submenu */}
+      {mainOpen && (
+        <div className="absolute left-0 top-full bg-white rounded-md z-50 min-w-[200px] duration-300 shadow-lg">
+          {states.map((state, i) => (
+            <div
+              key={i}
+              className="relative"
+              onMouseEnter={() => setOpenState(i)}
+              onMouseLeave={() => setOpenState(null)}
+            >
+              <button className="py-2 flex items-center w-full justify-between hover:text-orange-500 transition duration-300 px-4">
+                <span>{state.name}</span>
               </button>
-              <div className="absolute hidden group-hover:block bg-white shadow rounded  z-10">
-                <Link to="/delhi-solar-energy-policy" className="block px-4 py-2 hover:bg-gray-100">Delhi Solar Energy Policy</Link>
-                <Link to="/delhi-solar-guidlines" className="block px-4 py-2 hover:bg-gray-100">Regulation & Guidelines</Link>
-              </div>
-            </div>
 
-            <NavLink to="/blog" className="hover:text-yellow-500 flex items-center"><FaNewspaper className="mr-1" /> Blog</NavLink>
-            <NavLink to="/partner" className="hover:text-yellow-500 flex items-center"><FaHandshake className="mr-1" /> Become a Partner</NavLink>
+              {/* Submenu for specific state */}
+              {openState === i && (
+                <div className="absolute left-[150px] top-0 bg-white rounded-md min-w-[200px] z-50 shadow-lg">
+                  {state.links.map((link, idx) => (
+                    <Link
+                      key={idx}
+                      to={link.path}
+                      className="block py-2 px-4 hover:text-orange-400 transition duration-200"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+            <NavLink to="/blog" className="hover:text-orange-400 flex items-center"><FaNewspaper className="mr-1" /> Blog</NavLink>
+            <NavLink to="/partner" className="hover:text-orange-400 flex items-center"><FaHandshake className="mr-1" /> Become a Partner</NavLink>
 
             <div className="relative group">
-              <button className="hover:text-yellow-500">Pages</button>
+              <button className="hover:text-orange-400">Pages</button>
               <div className="absolute hidden group-hover:block bg-white shadow rounded  z-10">
                 <Link to="/faq" className="block px-4 py-2 hover:bg-gray-100">FAQ</Link>
                 <Link to="/referandearn" className="block px-4 py-2 hover:bg-gray-100">Refer & Earn</Link>
@@ -128,7 +185,7 @@ const Header = () => {
               </div>
             </div>
 
-            <NavLink to="/contact" className="hover:text-yellow-500 flex items-center"><FaPhoneAlt className="mr-1" /> Contact</NavLink>
+            <NavLink to="/contact" className="hover:text-orange-400 flex items-center"><FaPhoneAlt className="mr-1" /> Contact</NavLink>
 
             {/* ✅ User Section */}
             {
@@ -187,7 +244,7 @@ const Header = () => {
 
         {/* Mobile Sidebar Overlay */}
         {mobileOpen && (
-          <div 
+          <div
             className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
             onClick={handleDrawerToggle}
           ></div>
@@ -212,20 +269,62 @@ const Header = () => {
             <NavLink to="/about" onClick={handleDrawerToggle} className="py-2 flex items-center"><FaUsers className="mr-2" /> About</NavLink>
             <NavLink to="/rooftopsolar" onClick={handleDrawerToggle} className="py-2 flex items-center"><FaSolarPanel className="mr-2" /> Rooftop Solar</NavLink>
             <NavLink to="/pmsurayghar" onClick={handleDrawerToggle} className="py-2 flex items-center"><FaCloudSun className="mr-2" /> PM Surya Ghar</NavLink>
-            
-            {/* Delhi Solar Policy Submenu */}
+
+            {/* State Solar Policy Submenu */}
             <div>
-              <button 
-                onClick={() => toggleMobileSubmenu('delhiPolicy')} 
+              <button
+                onClick={() => toggleMobileSubmenu('statePolicy')}
                 className="py-2 flex items-center w-full justify-between"
               >
-                <span className="flex items-center"><FaSun className="mr-2" /> Delhi Solar Policy</span>
-                {mobileSubmenu.delhiPolicy ? <GoTriangleUp /> : <GoTriangleDown />}
+                <span className="flex items-center"><FaSun className="mr-2" /> State Solar Policy</span>
+                {mobileSubmenu.statePolicy ? <GoTriangleUp /> : <GoTriangleDown />}
               </button>
-              {mobileSubmenu.delhiPolicy && (
+
+              {mobileSubmenu.statePolicy && (
                 <div className="pl-6">
-                  <Link to="/delhi-solar-energy-policy" onClick={handleDrawerToggle} className="block py-2">Delhi Solar Energy Policy</Link>
-                  <Link to="/delhi-solar-guidlines" onClick={handleDrawerToggle} className="block py-2">Regulation & Guidelines</Link>
+                  {/* Delhi */}
+                  <div>
+                    <button
+                      onClick={() => toggleMobileSubmenu('delhiPolicy')}
+                      className="py-2 flex items-center w-full justify-between"
+                    >
+                      <span className="flex items-center">Delhi</span>
+                      {mobileSubmenu.delhiPolicy ? <GoTriangleUp /> : <GoTriangleDown />}
+                    </button>
+
+                    {mobileSubmenu.delhiPolicy && (
+                      <div className="pl-6">
+                        <Link to="/delhi-solar-policy" onClick={handleDrawerToggle} className="block py-2">
+                          Delhi Solar Policy
+                        </Link>
+                        <Link to="/delhi-solar-guidelines" onClick={handleDrawerToggle} className="block py-2">
+                          Regulation & Guidelines
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Uttar Pradesh */}
+                  <div>
+                    <button
+                      onClick={() => toggleMobileSubmenu('upPolicy')}
+                      className="py-2 flex items-center w-full justify-between"
+                    >
+                      <span className="flex items-center">Uttar Pradesh</span>
+                      {mobileSubmenu.upPolicy ? <GoTriangleUp /> : <GoTriangleDown />}
+                    </button>
+
+                    {mobileSubmenu.upPolicy && (
+                      <div className="pl-6">
+                        <Link to="/up-solar-policy" onClick={handleDrawerToggle} className="block py-2">
+                          UP Solar Policy
+                        </Link>
+                        <Link to="/up-solar-guidelines" onClick={handleDrawerToggle} className="block py-2">
+                          Regulation & Guidelines
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
@@ -235,8 +334,8 @@ const Header = () => {
 
             {/* Pages Submenu */}
             <div>
-              <button 
-                onClick={() => toggleMobileSubmenu('pages')} 
+              <button
+                onClick={() => toggleMobileSubmenu('pages')}
                 className="py-2 flex items-center w-full justify-between"
               >
                 <span>Pages</span>
@@ -273,7 +372,7 @@ const Header = () => {
                   )}
                   <span>{user.name}</span>
                 </div>
-                
+
                 <div className="pl-2 mt-2">
                   <UserMenu close={handleDrawerToggle} mobile={true} />
                 </div>
@@ -283,7 +382,7 @@ const Header = () => {
                 <FaUserPlus size={20} className='mr-2' /> Signup / Login
               </button>
             )}
-             <div> <button onClick={ () => navigate('/solar-calculator')} className='text-white bg-imp-text hover:bg-orange-400 duration-300 px-3 py-2 rounded-md'>Saving Calculator</button></div>
+            <div> <button onClick={() => navigate('/solar-calculator')} className='text-white bg-imp-text hover:bg-orange-400 duration-300 px-3 py-2 rounded-md'>Saving Calculator</button></div>
           </nav>
         </div>
       </nav>

@@ -35,7 +35,9 @@ const SolarCalculator = () => {
     cghsMulti: {}
   });
 
+  // Debug updateFormData function
   const updateFormData = (tab, field, value) => {
+    console.log('Updating:', tab, field, value);
     setFormData(prev => ({
       ...prev,
       [tab]: {
@@ -56,9 +58,11 @@ const SolarCalculator = () => {
 
   const calculateResidential = () => {
     const { electricity, area, capacity, includeSubsidy } = formData.residential;
-    const electricityNum = parseFloat(electricity) || 0;
-    const areaNum = parseFloat(area) || 0;
-    const capacityNum = parseFloat(capacity) || 0;
+    
+    // Convert string inputs to numbers, handle empty strings
+    const electricityNum = electricity ? parseFloat(electricity) : 0;
+    const areaNum = area ? parseFloat(area) : 0;
+    const capacityNum = capacity ? parseFloat(capacity) : 0;
 
     if (electricityNum <= 0 || areaNum <= 0 || capacityNum <= 0) {
       alert('Please enter valid positive values for all fields');
@@ -115,9 +119,11 @@ const SolarCalculator = () => {
 
   const calculateCommercial = () => {
     const { electricity, area, capacity, type } = formData.commercial;
-    const electricityNum = parseFloat(electricity) || 0;
-    const areaNum = parseFloat(area) || 0;
-    const capacityNum = parseFloat(capacity) || 0;
+    
+    // Convert string inputs to numbers, handle empty strings
+    const electricityNum = electricity ? parseFloat(electricity) : 0;
+    const areaNum = area ? parseFloat(area) : 0;
+    const capacityNum = capacity ? parseFloat(capacity) : 0;
 
     if (electricityNum <= 0 || areaNum <= 0 || capacityNum <= 0) {
       alert('Please enter valid positive values for all fields');
@@ -155,9 +161,11 @@ const SolarCalculator = () => {
 
   const calculateCghsSingle = () => {
     const { electricity, area, capacity } = formData.cghsSingle;
-    const electricityNum = parseFloat(electricity) || 0;
-    const areaNum = parseFloat(area) || 0;
-    let capacityNum = parseFloat(capacity) || 0;
+    
+    // Convert string inputs to numbers, handle empty strings
+    const electricityNum = electricity ? parseFloat(electricity) : 0;
+    const areaNum = area ? parseFloat(area) : 0;
+    let capacityNum = capacity ? parseFloat(capacity) : 0;
 
     if (electricityNum <= 0 || areaNum <= 0 || capacityNum <= 0) {
       alert('Please enter valid positive values for all fields');
@@ -197,9 +205,11 @@ const SolarCalculator = () => {
 
   const calculateCghsMulti = () => {
     const { electricity, area, capacity } = formData.cghsMulti;
-    const electricityNum = parseFloat(electricity) || 0;
-    const areaNum = parseFloat(area) || 0;
-    const capacityNum = parseFloat(capacity) || 0;
+    
+    // Convert string inputs to numbers, handle empty strings
+    const electricityNum = electricity ? parseFloat(electricity) : 0;
+    const areaNum = area ? parseFloat(area) : 0;
+    const capacityNum = capacity ? parseFloat(capacity) : 0;
 
     if (electricityNum <= 0 || areaNum <= 0 || capacityNum <= 0) {
       alert('Please enter valid positive values for all fields');
@@ -277,37 +287,47 @@ const SolarCalculator = () => {
     </div>
   );
 
-  const FormInput = ({ label, value, onChange, type = "number", min = "0", step, max, placeholder, required = true }) => (
-    <div className="space-y-2">
-      <label className="block text-sm font-bold text-gray-800 mb-2">
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
-      <input
-        type={type}
-        min={min}
-        max={max}
-        step={step}
-        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-3 focus:ring-blue-400 focus:border-blue-500 transition-all duration-200 hover:border-gray-300 bg-white text-gray-800 font-medium"
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        required={required}
-      />
-    </div>
-  );
+  // Simple FormInput component - allow all input
+  const FormInput = ({ label, value, onChange, placeholder, required = true, type = "text", step, max }) => {
+    console.log('FormInput rendered:', { label, value });
+    
+    return (
+      <div className="space-y-2">
+        <label className="block text-sm font-bold text-gray-800 mb-2">
+          {label} {required && <span className="text-red-500">*</span>}
+        </label>
+        <input
+          type={type}
+          step={step}
+          max={max}
+          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-3 focus:ring-blue-400 focus:border-blue-500 transition-all duration-200 hover:border-gray-300 bg-white text-gray-800 font-medium"
+          value={value}
+          onChange={(e) => {
+            console.log('Input changed:', e.target.value);
+            onChange(e.target.value);
+          }}
+          placeholder={placeholder}
+          required={required}
+        />
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-blue-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-imp-text to-orange-300 text-white py-20 relative overflow-hidden">
-        <div className="absolute z-10 "></div>
-        <div className="">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center justify-center mb-6">
             <Sun className="w-16 h-16 mr-4 text-yellow-300 animate-spin" style={{animationDuration: '8s'}} />
-            <h1 className="text-4xl md:text-5xl font-bold ">
+            <h1 className="text-4xl md:text-5xl font-bold">
               Solar Calculator
             </h1>
           </div>
+          <p className="text-center text-xl opacity-90 max-w-2xl mx-auto">
+            Calculate your solar installation costs, subsidies, and savings potential
+          </p>
         </div>
       </div>
 
@@ -397,21 +417,23 @@ const SolarCalculator = () => {
                     <FormInput
                       label="Electricity Consumption (per month in kWh)"
                       value={formData.residential.electricity}
-                      onChange={(e) => updateFormData('residential', 'electricity', e.target.value)}
+                      onChange={(value) => updateFormData('residential', 'electricity', value)}
                       placeholder="e.g., 300"
+                      type="text"
                     />
                     <FormInput
                       label="Approx Rooftop Area (sqm)"
                       value={formData.residential.area}
-                      onChange={(e) => updateFormData('residential', 'area', e.target.value)}
+                      onChange={(value) => updateFormData('residential', 'area', value)}
                       placeholder="e.g., 200"
+                      type="text"
                     />
                     <FormInput
                       label="Desired Solar Installation (kW)"
                       value={formData.residential.capacity}
-                      onChange={(e) => updateFormData('residential', 'capacity', e.target.value)}
-                      step="0.1"
+                      onChange={(value) => updateFormData('residential', 'capacity', value)}
                       placeholder="e.g., 5.0"
+                      type="text"
                     />
                   </div>
 
@@ -497,6 +519,7 @@ const SolarCalculator = () => {
                 </div>
               )}
 
+              {/* Other tabs remain the same... */}
               {/* Commercial Form */}
               {activeTab === 'commercial' && (
                 <div className="space-y-8">
@@ -504,21 +527,23 @@ const SolarCalculator = () => {
                     <FormInput
                       label="Electricity Consumption (per month in kWh)"
                       value={formData.commercial.electricity}
-                      onChange={(e) => updateFormData('commercial', 'electricity', e.target.value)}
+                      onChange={(value) => updateFormData('commercial', 'electricity', value)}
                       placeholder="e.g., 1000"
+                      type="text"
                     />
                     <FormInput
                       label="Approx Rooftop Area (sqm)"
                       value={formData.commercial.area}
-                      onChange={(e) => updateFormData('commercial', 'area', e.target.value)}
+                      onChange={(value) => updateFormData('commercial', 'area', value)}
                       placeholder="e.g., 500"
+                      type="text"
                     />
                     <FormInput
                       label="Desired Solar Installation (kW)"
                       value={formData.commercial.capacity}
-                      onChange={(e) => updateFormData('commercial', 'capacity', e.target.value)}
-                      step="0.1"
+                      onChange={(value) => updateFormData('commercial', 'capacity', value)}
                       placeholder="e.g., 25.0"
+                      type="text"
                     />
                     <div className="space-y-2">
                       <label className="block text-sm font-bold text-gray-800 mb-2">
@@ -606,22 +631,23 @@ const SolarCalculator = () => {
                     <FormInput
                       label="Electricity Consumption (per month in kWh)"
                       value={formData.cghsSingle.electricity}
-                      onChange={(e) => updateFormData('cghsSingle', 'electricity', e.target.value)}
+                      onChange={(value) => updateFormData('cghsSingle', 'electricity', value)}
                       placeholder="e.g., 800"
+                      type="text"
                     />
                     <FormInput
                       label="Approx Rooftop Area (sqm)"
                       value={formData.cghsSingle.area}
-                      onChange={(e) => updateFormData('cghsSingle', 'area', e.target.value)}
+                      onChange={(value) => updateFormData('cghsSingle', 'area', value)}
                       placeholder="e.g., 400"
+                      type="text"
                     />
                     <FormInput
                       label="Desired Solar Installation (kW)"
                       value={formData.cghsSingle.capacity}
-                      onChange={(e) => updateFormData('cghsSingle', 'capacity', e.target.value)}
-                      step="0.1"
-                      max="500"
+                      onChange={(value) => updateFormData('cghsSingle', 'capacity', value)}
                       placeholder="Max 500kW"
+                      type="text"
                     />
                   </div>
 
@@ -708,21 +734,23 @@ const SolarCalculator = () => {
                     <FormInput
                       label="Electricity Consumption (per month in kWh)"
                       value={formData.cghsMulti.electricity}
-                      onChange={(e) => updateFormData('cghsMulti', 'electricity', e.target.value)}
+                      onChange={(value) => updateFormData('cghsMulti', 'electricity', value)}
                       placeholder="e.g., 1200"
+                      type="text"
                     />
                     <FormInput
                       label="Approx Rooftop Area (sqm)"
                       value={formData.cghsMulti.area}
-                      onChange={(e) => updateFormData('cghsMulti', 'area', e.target.value)}
+                      onChange={(value) => updateFormData('cghsMulti', 'area', value)}
                       placeholder="e.g., 600"
+                      type="text"
                     />
                     <FormInput
                       label="Desired Solar Installation (kW)"
                       value={formData.cghsMulti.capacity}
-                      onChange={(e) => updateFormData('cghsMulti', 'capacity', e.target.value)}
-                      step="0.1"
+                      onChange={(value) => updateFormData('cghsMulti', 'capacity', value)}
                       placeholder="e.g., 50.0"
+                      type="text"
                     />
                   </div>
 
@@ -833,9 +861,6 @@ const SolarCalculator = () => {
           </div>
         </div>
       </div>
-
-   
-     
     </div>
   );
 };
