@@ -172,7 +172,7 @@ const Header = () => {
         </div>
       )}
     </div>
-            <NavLink to="/blog" className="hover:text-orange-400 flex items-center"><FaNewspaper className="mr-1" /> Blog</NavLink>
+            <NavLink to="/blogs" className="hover:text-orange-400 flex items-center"><FaNewspaper className="mr-1" /> Blog</NavLink>
             <NavLink to="/partner" className="hover:text-orange-400 flex items-center"><FaHandshake className="mr-1" /> Become a Partner</NavLink>
 
             <div className="relative group">
@@ -329,7 +329,7 @@ const Header = () => {
               )}
             </div>
 
-            <NavLink to="/blog" onClick={handleDrawerToggle} className="py-2 flex items-center"><FaNewspaper className="mr-2" /> Blog</NavLink>
+            <NavLink to="/blogs" onClick={handleDrawerToggle} className="py-2 flex items-center"><FaNewspaper className="mr-2" /> Blog</NavLink>
             <NavLink to="/partner" onClick={handleDrawerToggle} className="py-2 flex items-center"><FaHandshake className="mr-2" /> Become a Partner</NavLink>
 
             {/* Pages Submenu */}

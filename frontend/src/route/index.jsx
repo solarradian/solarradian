@@ -20,7 +20,7 @@ import Profile from './../pages/Profile';
 import Address from "../pages/Address";
 import AdminPermision from './../layout/AdminPermision';
 // import EmployeePermision from './../layout/EmployeePermision';
- import Bothpermision from './../layout/Bothpermision';
+import Bothpermision from './../layout/Bothpermision';
 import CreateProject from "../pages/CreateProject";
 import GetProjects from "../pages/GetProjects";
 import QuotationGenerator from "../pages/QuotationGenerator";
@@ -28,7 +28,6 @@ import Faq from "../pages/Faq";
 import SolarCalculator from "../pages/SolarCalculator";
 import Team from "../pages/Team";
 import FreeQuote from "../pages/FreeQuote";
-import BlogPage from "../pages/BlogPage/BlogPage";
 import SolarinDelhi from "../statepages/SolarinDelhi";
 import SolarinNoida from "../statepages/SolarinNoida";
 import WhySolar from "../pages/WhySolar";
@@ -36,8 +35,15 @@ import DelhiSolarPolicy from "../pages/DelhiSolarPolicy";
 import UpSolarPolicy from "../pages/UpSolarPolicy";
 import DelhiSolarRegulationAndGuidlines from "../pages/DelhiSolarRegulationAndGuidlines";
 import UpSolarRegulationAndGuidlines from "../pages/UpSolarRegulationAndGuidlines";
-
-
+import Blog from "../pages/Blog";
+import RooftopSolarInNoida from "../blogFiles/RooftopSolarInNoida";
+import RooftopSolarInGaziabad from "../blogFiles/RooftopSolarInGaziabad";
+import RooftopSolarInDelhi from "../blogFiles/RooftopSolarInDelhi";
+import RooftopSolarGuide from "../blogFiles/RooftopSolarGuide";
+import OnGridVsOffGridSolar from "../blogFiles/OnGridVsOffGridSolar";
+import NetMetering from "../blogFiles/NetMetering";
+import SolarForSocieties from "../blogFiles/SolarForSocieties";
+import RoofSpaceForSolar from "../blogFiles/RoofSpaceForSolar";
 
 const router = createBrowserRouter([
 
@@ -70,65 +76,98 @@ const router = createBrowserRouter([
                 path: "partner",
                 element: <Partner />
             },
-             {
+            {
                 path: "solar-in-delhi",
-                element: <SolarinDelhi/>
+                element: <SolarinDelhi />
             },
+           
             {
                 path: "solar-in-noida",
-                element: <SolarinNoida/>
+                element: <SolarinNoida />
             },
             {
                 path: "delhi-solar-policy",
-                element: <DelhiSolarPolicy/>
+                element: <DelhiSolarPolicy />
             },
             {
                 path: "up-solar-policy",
-                element: <UpSolarPolicy/>
+                element: <UpSolarPolicy />
             },
             {
                 path: "delhi-solar-guidelines",
-                element: <DelhiSolarRegulationAndGuidlines/>
+                element: <DelhiSolarRegulationAndGuidlines />
             },
             {
                 path: "up-solar-guidelines",
-                element: <UpSolarRegulationAndGuidlines/>
+                element: <UpSolarRegulationAndGuidlines />
             },
             {
                 path: "faq",
-                element: <Faq/>
+                element: <Faq />
             },
             {
                 path: "solar-calculator",
-                element: <SolarCalculator/>
+                element: <SolarCalculator />
             },
-              {
+            {
                 path: "team",
-                element: <Team/>
+                element: <Team />
             },
             {
                 path: "freequote",
-                element: <FreeQuote/>
+                element: <FreeQuote />
             },
             {
                 path: "referandearn",
                 element: <ReferAndEarn />
             },
-             {
+            {
                 path: "whysolar",
-                element: <WhySolar/>
+                element: <WhySolar />
             },
             {
                 path: "pmsurayghar",
                 element: <PmsuryaGhar />
             },
             {
-                path: "blog/*",
-                element: <BlogPage />
+                path: "blogs",
+                element: <Blog /> // blog listing page
+            },
+             {
+                path: "blogs/rooftop-guide", 
+                element: <RooftopSolarGuide/>
+            },
+             {
+                path: "blogs/ongrid-vs-offgrid-solar", 
+                element: <OnGridVsOffGridSolar/>
+            },
+             {
+                path: "blogs/net-metering", 
+                element: <NetMetering/>
+            },
+             {
+                path: "blogs/solar-for-societies",
+                element: <SolarForSocieties/>
+            },
+             {
+                path: "blogs/roofspace-for-solar",
+                element: <RoofSpaceForSolar/>
+            },
+            {
+                path: "blogs/rooftop-solar-in-delhi",
+                element: <RooftopSolarInDelhi/>
+            },
+            {
+                path: "blogs/rooftop-solar-in-noida",
+                element: <RooftopSolarInNoida/>
+            },
+            {
+                path: "blogs/rooftop-solar-in-gaziabaad",
+                element: <RooftopSolarInGaziabad/>
             },
             {
                 path: "*",
-                element: <PagenotFound/>
+                element: <PagenotFound />
             },
             {
                 path: "login",
@@ -136,7 +175,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "register",
-                element:  <Register /> 
+                element: <Register />
             },
             {
                 path: "forgot-password",
@@ -150,9 +189,9 @@ const router = createBrowserRouter([
                 path: "reset-password",
                 element: <ResetPassword />
             },
-             {
+            {
                 path: "dashboard",
-                element:  <Dashboard />,
+                element: <Dashboard />,
                 children: [
                     {
                         path: "profile",
@@ -171,15 +210,15 @@ const router = createBrowserRouter([
                     ,
                     {
                         path: "create-project",
-                        element:  <AdminPermision> <CreateProject /> </AdminPermision>
+                        element: <AdminPermision> <CreateProject /> </AdminPermision>
                     },
                     {
                         path: "get-project",
-                        element:  <GetProjects/>
+                        element: <GetProjects />
                     },
                     {
                         path: "quotationgenerator",
-                        element:  <Bothpermision> <QuotationGenerator/> </Bothpermision>
+                        element: <Bothpermision> <QuotationGenerator /> </Bothpermision>
                     }
 
                 ]

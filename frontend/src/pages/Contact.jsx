@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen contaniner xl:max-w-7xl bg-green-50 px-4 py-16">
-      
+    <div className="min-h-screen bg-green-50 px-4 sm:px-6 lg:px-8 py-16">
       {/* Super Heading */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -12,25 +11,26 @@ const Contact = () => {
         transition={{ duration: 0.8, type: 'spring' }}
         className="text-center mb-12"
       >
-        <h1 className="text-4xl font-extrabold text-gray-800 drop-shadow-md mb-4">Let's Connect</h1>
-        <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-          We’d love to hear from you! Whether you have a question about services, pricing, location, or anything else,
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 drop-shadow-md mb-4">
+          Let's Connect
+        </h1>
+        <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto px-2">
+          We’d love to hear from you! Whether you have a question about services, pricing, or anything else,
           our team is ready to answer all your questions.
         </p>
       </motion.div>
 
       {/* Main Content Grid */}
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Form Card */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring' }}
-          className="bg-white p-10 rounded-2xl shadow-2xl"
+          className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-2xl"
         >
           <motion.h2
-            className="text-3xl font-bold text-center text-[#20AF24] mb-8"
+            className="text-2xl sm:text-3xl font-bold text-center text-[#20AF24] mb-8"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -85,7 +85,7 @@ const Contact = () => {
               <textarea
                 rows="5"
                 placeholder="Type your message here..."
-                className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20AF24] transition-all duration-200"
+                className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20AF24] transition-all duration-200 resize-none"
               />
             </motion.div>
 
@@ -100,7 +100,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="bg-[#20AF24] hover:bg-[#17861c] text-white px-6 py-3 rounded-xl shadow-md transition-all duration-200"
+                className="bg-[#20AF24] hover:bg-[#17861c] text-white px-6 py-3 rounded-xl shadow-md transition-all duration-200 w-full sm:w-auto"
               >
                 ✉️ Send Message
               </motion.button>
@@ -113,20 +113,19 @@ const Contact = () => {
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring', delay: 0.2 }}
-          className="bg-white p-4 md:p-6 rounded-2xl shadow-2xl"
+          className="bg-white p-4 sm:p-6 rounded-2xl shadow-2xl flex justify-center items-center"
         >
           <iframe
             title="Ashirwad Complex, Noida"
             src="https://www.google.com/maps?q=S.N+2,+2nd+Floor,+Ashirwad+Complex,+Sector+53,+Noida&output=embed"
             width="100%"
-            height="500"
+            height="400"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             className="rounded-xl"
           ></iframe>
         </motion.div>
-
       </div>
     </div>
   );
