@@ -46,7 +46,51 @@ import RoofopPic from '../assets/s-2.jpg'; // update the path if your image is i
       "Estimate rooftop area, kW needs, and learn practical tips — focusedfor Delhi &amp; Uttar Pradesh rooftops....",
     slug: "roofSpace-for-solar",
   },
-  
+   {
+    id: 6,
+    title: "Solar in Noida",
+    image: RoofopPic,
+    alt: "Choosing Right Solar System",
+    description:
+      "Estimate rooftop area, kW needs, and learn practical tips — focusedfor Delhi &amp; Uttar Pradesh rooftops....",
+    slug: "rooftop-solar-in-noida",
+  },
+   {
+    id: 7,
+    title: "Solar in Delhi",
+    image: RoofopPic,
+    alt: "Choosing Right Solar System",
+    description:
+      "Estimate rooftop area, kW needs, and learn practical tips — focusedfor Delhi &amp; Uttar Pradesh rooftops....",
+    slug: "rooftop-solar-in-delhi",
+  },
+   {
+    id: 8,
+    title: "Solar in Gaziabad",
+    image: RoofopPic,
+    alt: "Choosing Right Solar System",
+    description:
+      "Estimate rooftop area, kW needs, and learn practical tips — focusedfor Delhi &amp; Uttar Pradesh rooftops....",
+    slug: "rooftop-solar-in-gaziabad",
+  },
+   {
+    id: 9,
+    title: "Solar in Greater Noida",
+    image: RoofopPic,
+    alt: "Choosing Right Solar System",
+    description:
+      "Estimate rooftop area, kW needs, and learn practical tips — focusedfor Delhi &amp; Uttar Pradesh rooftops....",
+    slug: "rooftop-solar-in-greater-noida",
+  },
+   {
+    id: 10,
+    title: "Solar in Greater NCR",
+    image: RoofopPic,
+    alt: "Choosing Right Solar System",
+    description:
+      "Estimate rooftop area, kW needs, and learn practical tips — focusedfor Delhi &amp; Uttar Pradesh rooftops....",
+    slug: "rooftop-solar-in-ncr",
+  },
 ];
 
 export default blogdata

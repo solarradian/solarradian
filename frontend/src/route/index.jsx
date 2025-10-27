@@ -44,6 +44,8 @@ import OnGridVsOffGridSolar from "../blogFiles/OnGridVsOffGridSolar";
 import NetMetering from "../blogFiles/NetMetering";
 import SolarForSocieties from "../blogFiles/SolarForSocieties";
 import RoofSpaceForSolar from "../blogFiles/RoofSpaceForSolar";
+import RooftopSolarinGreaterNoida from "../blogFiles/RooftopSolarinGreaterNoida";
+import RooftopSolarinNcr from "../blogFiles/RooftopSolarInNcr";
 
 const router = createBrowserRouter([
 
@@ -79,15 +81,6 @@ const router = createBrowserRouter([
             {
                 path: "solar-in-delhi",
                 element: <SolarinDelhi />
-            },
-           
-            {
-                path: "solar-in-noida",
-                element: <SolarinNoida />
-            },
-            {
-                path: "delhi-solar-policy",
-                element: <DelhiSolarPolicy />
             },
             {
                 path: "up-solar-policy",
@@ -161,9 +154,17 @@ const router = createBrowserRouter([
                 path: "blogs/rooftop-solar-in-noida",
                 element: <RooftopSolarInNoida/>
             },
+              {
+                path: "blogs/rooftop-solar-in-greater-noida",
+                element: <RooftopSolarinGreaterNoida/>
+            },
             {
-                path: "blogs/rooftop-solar-in-gaziabaad",
+                path: "blogs/rooftop-solar-in-gaziabad",
                 element: <RooftopSolarInGaziabad/>
+            },
+            {
+                path: "blogs/rooftop-solar-in-ncr",
+                element: <RooftopSolarinNcr/>
             },
             {
                 path: "*",

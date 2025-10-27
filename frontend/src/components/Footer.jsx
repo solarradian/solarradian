@@ -100,8 +100,11 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Solar Area</h3>
           <div className="flex flex-col text-gray-300 text-lg">
           <ul className='list-disc'> 
-          <li><Link to={"/solar-in-delhi"} className='underline text-sm'>Solar In Delhi</Link></li> 
-          <li><Link to={"/solar-in-noida"} className='underline text-sm'>Solar In Noida</Link></li> 
+          <li><Link to={"/blogs/rooftop-solar-in-delhi"} className='underline text-sm'>Solar In Delhi</Link></li> 
+          <li><Link to={"/blogs/rooftop-solar-in-noida"} className='underline text-sm'>Solar In Noida</Link></li> 
+          <li><Link to={"/blogs/rooftop-solar-in-greater-noida"} className='underline text-sm'>Solar In Greater Noida</Link></li> 
+          <li><Link to={"/blogs/rooftop-solar-in-gaziabad"} className='underline text-sm'>Solar In Ghaziabad</Link></li> 
+          <li><Link to={"/blogs/rooftop-solar-in-ncr"} className='underline text-sm'>Solar In NCR</Link></li> 
           </ul>
       
           </div>

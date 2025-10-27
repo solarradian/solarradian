@@ -1,8 +1,7 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const RooftopSolarInGaziabad = () => {
+const RooftopSolarinNcr = () => {
   const navigate = useNavigate();
 
   return (
@@ -13,7 +12,7 @@ const RooftopSolarInGaziabad = () => {
           <h1 className="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight">
             Rooftop Solar in{" "}
             <span className="text-amber-500">
-              Gaziabad
+              NCR
             </span>
           </h1>
           <p className="mt-2 text-sm text-slate-600">
@@ -184,4 +183,4 @@ const RooftopSolarInGaziabad = () => {
   );
 };
 
-export default RooftopSolarInGaziabad;
+export default RooftopSolarinNcr;
